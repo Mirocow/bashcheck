@@ -1,7 +1,7 @@
 USE
 ==================
 
-***  wget -q -O - https://raw.githubusercontent.com/Mirocow/bashcheck/master/bashcheck| bash ***
+wget -q -O - https://raw.githubusercontent.com/Mirocow/bashcheck/master/bashcheck| bash
 
 
 CVE-2014-6271
