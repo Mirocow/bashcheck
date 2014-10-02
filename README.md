@@ -1,20 +1,8 @@
-bashcheck
-=========
+USE
+==================
 
-Test script for Shellshock and related vulnerabilities
+***  wget -q -O - https://raw.githubusercontent.com/Mirocow/bashcheck/master/bashcheck| bash ***
 
-background
-==========
-
-The Bash vulnerability that is now known as Shellshock had an incomplete
-fix at first. There are currently 4 public and one supposedly non-public
-vulnerability.
-
-usage
-=====
-
-Just run script:
- `./bashcheck`
 
 CVE-2014-6271
 =============
