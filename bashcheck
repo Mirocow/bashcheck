@@ -50,3 +50,11 @@ if [ -n "$r" ]; then
 else
 	echo -e "\033[92mVariable function parser inactive, likely safe from unknown parser bugs\033[39m"
 fi
+
+export x='() { :;}; echo vulnerable'
+r=$(/bin/sh -c "echo ''")
+if [ -n "$r" ]; then
+	echo -e '\033[91mVulnerable to CVE-2014-6271 (original shellshock)\033[39m'
+else
+	echo -e '\033[92mNot vulnerable to CVE-2014-6271 (original shellshock)\033[39m'
+fi
