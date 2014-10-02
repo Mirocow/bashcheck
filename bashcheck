@@ -35,3 +35,11 @@ if [ -n "$r" ]; then
 else
 	echo -e "\033[92mVariable function parser inactive, likely safe from unknown parser bugs\033[39m"
 fi
+
+cd /tmp;rm echo 2>/dev/null
+env X='() { (a)=>\' sh -c "echo date"; cat echo 2>/dev/null
+if [ -e echo ]; then
+        echo -e "\033[91mVulnerable to CVE-2014-7169 (taviso bug)\033[39m"
+else
+        echo -e "\033[92mNot vulnerable to CVE-2014-7169 (taviso bug)\033[39m"
+fi
