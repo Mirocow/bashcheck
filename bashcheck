@@ -43,3 +43,10 @@ if [ -e echo ]; then
 else
         echo -e "\033[92mNot vulnerable to CVE-2014-7169 (taviso bug)\033[39m"
 fi
+
+r=$(env BASH_FUNC_uname%%="() { echo busted; }" bash -c uname)
+if [ -n "$r" ]; then
+	echo -e "\033[93mVariable function parser still active, likely vulnerable to yet unknown parser bugs like CVE-2014-6277 (lcamtuf bug)\033[39m"
+else
+	echo -e "\033[92mVariable function parser inactive, likely safe from unknown parser bugs\033[39m"
+fi
